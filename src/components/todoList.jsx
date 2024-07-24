@@ -41,10 +41,10 @@ function TodoList() {
       <div className="todoList">
         <h1>To-Do-List</h1>
 
-        <div>
+        <div className="input-area">
           <input
             type="text"
-            placeholder="Enter a Task..."
+            placeholder="Enter a Todo..."
             value={newTask}
             onChange={handleInputChange}
           />
@@ -53,18 +53,18 @@ function TodoList() {
           </button>
         </div>
 
-        <ol>
+        <ol className="task-area">
           {tasks.map((task, index) => (
             <li key={index}>
               <span className="text">{task}</span>
               <button className="deleteBtn" onClick={() => deleteTask(index)}>
-                Delete
+                <i class="fa-solid fa-trash"></i>
               </button>
               <button className="moveBtn" onClick={() => moveTaskUp(index)}>
-                👆🏻
+                <i class="fa-solid fa-up-long"></i>
               </button>
               <button className="moveBtn" onClick={() => moveTaskDown(index)}>
-                👇🏻
+                <i class="fa-solid fa-down-long"></i>
               </button>
             </li>
           ))}
@@ -75,3 +75,4 @@ function TodoList() {
 }
 
 export default TodoList;
+
